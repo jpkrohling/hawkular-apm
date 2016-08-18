@@ -18,6 +18,7 @@ package org.hawkular.apm.tests.wildfly;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -81,6 +82,18 @@ public class TraceServiceRESTTest {
     @Before
     public void initTest() {
         service.clear(null);
+    }
+
+    @Test
+    public void testInvalidId() {
+        Trace trace = service.getTrace(null, "1");
+        assertNull(trace);
+    }
+
+    @Test
+    public void testNonNumericId() {
+        Trace trace = service.getTrace(null, "ACME");
+        assertNull(trace);
     }
 
     @Test
