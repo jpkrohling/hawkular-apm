@@ -31,7 +31,7 @@ do
 
     data="{\"accountId\":\"$accountId\",\"itemId\":\"$itemId\",\"quantity\": $quantity}"
 
-    curl -X POST -H "Content-Type: application/json" -d "$data" http://localhost:8180/orders
+    curl -X POST -H "Content-Type: application/json" -d "$data" http://order-manager-order-manager.127.0.0.1.nip.io/orders
 
     echo
     echo
