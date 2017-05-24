@@ -20,8 +20,8 @@ FROM openjdk:8-jdk
 MAINTAINER Juraci Paixão Kröhling <jpkroehling+docker@redhat.com>
 
 ENV APP_HOME /app/
-ENV JAEGER_SERVER_URL jaeger-all-in-one
-ENV USE_JAEGER false
+ENV JAEGER_SERVER_URL jaeger-agent.jaeger.svc
+ENV USE_JAEGER true
 
 COPY target/hawkular-apm-examples-vertx-opentracing-account-manager-fat.jar $APP_HOME
 
